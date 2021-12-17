@@ -1,7 +1,7 @@
 from flask import Flask
 from flask import request
 from flask import redirect
-from test_persistencia import fn_salvar_persistencia
+#from test_persistencia import fn_salvar_persistencia
 
 app = Flask(__name__)
 
@@ -9,6 +9,10 @@ app = Flask(__name__)
 @app.route("/pizza",methods=['POST'])
 
 def pizza():
+    '''
+    Se implementa el listener para el contaxto pizza
+    '''
+
     nombre = str(request.form.get("nombre_cliente"))
     apellido = str(request.form.get("apellido_cliente"))
 
@@ -17,7 +21,7 @@ def pizza():
     pedidos = [diccionario]
     print(f"Pedidos: {pedidos}")
 
-    fn_salvar_persistencia(pedidos)
+    #fn_salvar_persistencia(pedidos)
 
     #return "<html><body><p>Hello "+ nombre +"!</p></body></html>"
     return redirect("http://localhost/solicita_pedido.html", code=302)
