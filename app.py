@@ -9,9 +9,7 @@ app = Flask(__name__)
 @app.route("/pizza",methods=['POST'])
 
 def pizza():
-    '''
-    Se implementa el listener para el contaxto pizza
-    '''
+    '''Se implementa el listener para el contaxto pizza.'''
 
     nombre = str(request.form.get("nombre_cliente"))
     apellido = str(request.form.get("apellido_cliente"))
