@@ -1,3 +1,4 @@
+'''App.py para backend'''
 from flask import Flask
 from flask import request
 from flask import redirect
@@ -9,7 +10,7 @@ app = Flask(__name__)
 @app.route("/pizza",methods=['POST'])
 
 def pizza():
-    '''Se implementa el listener para el contaxto pizza.'''
+    '''Se implementa el listener para el contexto pizza.'''
 
     nombre = str(request.form.get("nombre_cliente"))
     apellido = str(request.form.get("apellido_cliente"))
