@@ -32,6 +32,6 @@ def checksize():
     respuesta = "Disponible"
 
     if size == 'S':
-         respuesta = "No disponible"       
+        respuesta = "No disponible"
 
     return Response(respuesta, 200, {'Access-Control-Allow-Origin': '*'})
