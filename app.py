@@ -11,6 +11,9 @@ app = Flask(__name__)
 @app.route("/pizza",methods=['POST'])
 
 def pizza():
+    """
+    Redireccionamiento para pizza.
+    """
     nombre = str(request.form.get("nombre_cliente"))
     apellido = str(request.form.get("apellido_cliente"))
 
@@ -19,7 +22,7 @@ def pizza():
     pedidos = [diccionario]
     print(f"Pedidos: {pedidos}")
 
-    test_guardar_pedido(pedidos)
+    #test_guardar_pedido(pedidos)
 
     #return "<html><body><p>Hello "+ nombre +"!</p></body></html>"
     return redirect("http://localhost/solicita_pedido.html", code=302)
@@ -31,12 +34,10 @@ def checksize():
     """
 
     size = str(request.form.get("tamanho"))
-    respuesta_negativa = "No disponible"
     respuesta_positiva = "Disponible"
 
     if size == 'S':
-        #return redirect("No disponible")
-        return Response(respuesta_negativa, 200, {'Access-Control-Allow-Origin': '*'})
-    elif size != 'S':
-        return Response(respuesta_positiva, 200, {'Access-Control-Allow-Origin': '*'})
+         respuesta_negativa = "No disponible"       
+
+    return Response(respuesta_negativa, 200, {'Access-Control-Allow-Origin': '*'})
         #return redirect("Disponible")
